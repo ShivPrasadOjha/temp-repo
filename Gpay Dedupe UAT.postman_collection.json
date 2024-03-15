@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "80580cde-bee7-4046-88e7-4e0a72ed41c6",
+		"name": "Gpay Dedupe UAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "960177"
+	},
+	"item": [
+		{
+			"name": "IMPS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-priority",
+						"value": "01000",
+						"type": "default"
+					},
+					{
+						"key": "settlement_id",
+						"value": "IMPS1091",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"localTxnDtTime\": \"20231013110800\",\n    \"beneAccNo\": \"123456041\",\n    \"beneIFSC\": \"NPCI0000001\",\n    \"amount\": \"10\",\n    \"tranRefNo\": \"19809808098091091\",\n    \"paymentRef\": \"random\",\n    \"senderName\": \"MFIN\",\n    \"mobile\": \"9999999999\",\n    \"retailerCode\": \"rcode\",\n    \"passCode\": \"447c4524c9074b8c97e3a3c40ca7458d\",\n    \"bcID\": \"IBCKer00055\"\n}"
+				},
+				"url": {
+					"raw": "https://uat-onprem-dmz-hybrid.icicibank.com/api/v6/composite-payment",
+					"protocol": "https",
+					"host": [
+						"uat-onprem-dmz-hybrid",
+						"icicibank",
+						"com"
+					],
+					"path": [
+						"api",
+						"v6",
+						"composite-payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-priority",
+						"value": "10000",
+						"type": "default"
+					},
+					{
+						"key": "settlement_id",
+						"value": "UPI179",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"device-id\": \"400438400438400438400438\",\n    \"mobile\": 7988000014,\n    \"channel-code\": \"MICICI\",\n    \"profile-id\": \"2996304\",\n    \"seq-no\": \"UPI4735768169179\",\n    \"account-number\": \"\",\n    \"use-default-acc\": \"D\",\n    \"account-type\": null,\n    \"payee-va\": \"Vaibhav1312@icici\",\n    \"payer-va\": \"uattesting0014@icici\",\n    \"amount\": 20,\n    \"pre-approved\": \"P\",\n    \"default-debit\": \"N\",\n    \"default-credit\": \"N\",\n    \"txn-type\": \"merchantToPersonPay\",\n    \"remarks\": \"ZOMATO\",\n    \"mcc\": 6011,\n    \"merchant-type\": \"ENTITY\",\n    \"urn\": null,\n    \"vpa\": \"Vaibhav1312@icici\",\n    \"account-provider\": \"74\",\n    \"payee-name\": null\n}"
+				},
+				"url": {
+					"raw": "https://uat-onprem-dmz-hybrid.icicibank.com/api/v6/composite-payment",
+					"protocol": "https",
+					"host": [
+						"uat-onprem-dmz-hybrid",
+						"icicibank",
+						"com"
+					],
+					"path": [
+						"api",
+						"v6",
+						"composite-payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NEFT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-priority",
+						"value": "00100",
+						"type": "default"
+					},
+					{
+						"key": "settlement_id",
+						"value": "NEFT1005",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tranRefNo\": \"I2005640211006\",\n    \"amount\": \"1.50\",\n    \"senderAcctNo\": \"000451000301\",\n    \"beneAccNo\": \"000405002777\",\n    \"beneName\": \"NOIDA\",\n    \"beneIFSC\": \"DLXB0000092\",\n    \"narration1\": \"Test1\",\n    \"narration2\": \"Test2\",\n    \"crpId\": \"PRACHICIB1\",\n    \"crpUsr\": \"USER3\",\n    \"aggrId\": \"CUST1053\",\n    \"urn\": \"SR232499824\",\n    \"aggrName\": \"INVESTUP\",\n    \"txnType\": \"RGS\",\n    \"WORKFLOW_REQD\": \"N\"\n}"
+				},
+				"url": {
+					"raw": "https://uat-onprem-dmz-hybrid.icicibank.com/api/v6/composite-payment",
+					"protocol": "https",
+					"host": [
+						"uat-onprem-dmz-hybrid",
+						"icicibank",
+						"com"
+					],
+					"path": [
+						"api",
+						"v6",
+						"composite-payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RTGS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-priority",
+						"value": "00010",
+						"type": "default"
+					},
+					{
+						"key": "settlement_id",
+						"value": "A1007",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"AGGRID\": \"CUST0861\",\n    \"CORPID\": \"PRACHICIB1\",\n    \"USERID\": \"USER3\",\n    \"URN\": \"WXYX1234\",\n    \"AGGRNAME\": \"COMPOSITETESTING\",\n    \"UNIQUEID\": \"2nx4m454236n22i303\",\n    \"DEBITACC\": \"000451000301\",\n    \"CREDITACC\": \"000405002777\",\n    \"IFSC\": \"ICIC0000011\",\n    \"AMOUNT\": 1696460,\n    \"CURRENCY\": \"INR\",\n    \"TXNTYPE\": \"TPA\",\n    \"PAYEENAME\": \"AMARJYOTI AUTO PVT LTD\",\n    \"REMARKS\": \"NA\",\n    \"WORKFLOW_REQD\": \"N\"\n}"
+				},
+				"url": {
+					"raw": "https://uat-onprem-dmz-hybrid.icicibank.com/api/v6/composite-payment",
+					"protocol": "https",
+					"host": [
+						"uat-onprem-dmz-hybrid",
+						"icicibank",
+						"com"
+					],
+					"path": [
+						"api",
+						"v6",
+						"composite-payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-priority",
+						"value": "00001",
+						"type": "default"
+					},
+					{
+						"key": "settlement_id",
+						"value": "A1009",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tranRefNo\": \"2023134359\",\n    \"amount\": \"1\",\n    \"senderAcctNo\": \"000451000301\",\n    \"beneAccNo\": \"000405002777\",\n    \"beneName\": \"SWA\",\n    \"beneIFSC\": \"ICIC0000011\",\n    \"narration1\": \"uat\",\n    \"crpId\": \"SESPRODUCT\",\n    \"crpUsr\": \"389018\",\n    \"aggrId\": \"CUST1053\",\n    \"urn\": \"SR232499824\",\n    \"aggrName\": \"INVESTUP\",\n    \"txnType\": \"TPA\",\n    \"WORKFLOW_REQD\": \"N\"\n}"
+				},
+				"url": {
+					"raw": "https://uat-onprem-dmz-hybrid.icicibank.com/api/v6/composite-payment",
+					"protocol": "https",
+					"host": [
+						"uat-onprem-dmz-hybrid",
+						"icicibank",
+						"com"
+					],
+					"path": [
+						"api",
+						"v6",
+						"composite-payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_transaction_status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transaction_id\": \"DEDTRA004\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uat-onprem-dmz-hybrid.icicibank.com/api/v1/composite-getstatus",
+					"protocol": "https",
+					"host": [
+						"uat-onprem-dmz-hybrid",
+						"icicibank",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"composite-getstatus"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
